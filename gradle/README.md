@@ -11,6 +11,3 @@ Aplicación desarrollada en **Android Studio** utilizando **Jetpack Compose**.
 ## Foto
 
 Foto:
-
-
-
