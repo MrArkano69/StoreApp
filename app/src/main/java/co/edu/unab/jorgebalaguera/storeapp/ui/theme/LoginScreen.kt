@@ -17,11 +17,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.navigation.NavController
 
 
-@Preview
+
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navController: NavController) {
     Scaffold { innerPadding ->
 
         Column(
@@ -84,13 +85,18 @@ fun LoginScreen() {
             ) {
                 Text("Iniciar Sesión", color = Color.White)
             }
+
             Spacer(modifier = Modifier.height(24.dp))
 
-            TextButton(onClick = {}) {Text(
-                text = "¿No tienes cuenta? Registrate.",
-                color = Color(0xFFFF9900)
-            )
-
+            TextButton(
+                onClick = {
+                    navController.navigate("register")
+                }
+            ) {
+                Text(
+                    text = "¿No tienes cuenta? Regístrate.",
+                    color = Color(0xFFFF9900)
+                )
             }
         }
     }

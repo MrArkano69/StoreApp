@@ -17,10 +17,11 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 
-@Preview
+
 @Composable
-fun RegisterScreen() {
+fun RegisterScreen(navController: NavController) {
     Scaffold { innerPadding ->
 
         Column(
@@ -111,6 +112,19 @@ fun RegisterScreen() {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text("Crear Cuenta", color = Color.White)
+            }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            TextButton(
+                onClick = {
+                    navController.navigate("login")
+                }
+            ) {
+                Text(
+                    text = "¿Ya tienes cuenta? Inicia sesión.",
+                    color = Color(0xFFFF9900)
+                )
             }
         }
     }
